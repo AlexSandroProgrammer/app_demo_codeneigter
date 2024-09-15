@@ -52,9 +52,10 @@ defined('BASEPATH') or exit('No direct script access allowed');
 $route['default_controller'] = 'welcome';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
-
 // ruta para enviar formulario de registro
 $route['register'] = 'welcome/register';
 $route['login'] = 'welcome/login';
 $route['admin'] = 'admin/index';
 $route['sedes'] = 'sedes/index';
+$route['form_registrar_sede'] = 'sedes/view_registrar';
+$route['registrar_sede'] = 'sedes/register';

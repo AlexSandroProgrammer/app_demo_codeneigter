@@ -1,4 +1,21 @@
 <?= require_once('components/sidebar.php') ?>
+
+<!-- mostrar la notificacion de registro exitoso -->
+<?php
+if ($this->session->flashdata('success')) {                        
+?>
+<script>
+Swal.fire({
+    title: 'Perfecto!',
+    text: '<?= $this->session->flashdata('success')?>',
+    icon: 'success',
+    confirmButtonText: 'Aceptar'
+});
+</script>
+
+<?php                            
+}
+?>
 <div id="page-wrapper">
     <div class="row">
         <div class="col-lg-12">
@@ -11,7 +28,7 @@
         <div class="col-lg-12">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    DataTables Advanced Tables
+                    Listado de Sedes
                 </div>
                 <!-- /.panel-heading -->
                 <div class="panel-body">

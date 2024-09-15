@@ -27,6 +27,8 @@
     <!-- Custom Fonts -->
     <link href="<?= base_url('assets/bower_components/font-awesome/css/font-awesome.min.css') ?>" rel="stylesheet"
         type="text/css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 </head>
 
 <body>
@@ -70,7 +72,7 @@
                                 Sedes<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="<?= base_url('sedes/register')?>">Registrar Sede</a>
+                                    <a href="<?= base_url('form_registrar_sede')?>">Registrar Sede</a>
                                 </li>
                                 <li>
                                     <a href="<?= base_url('sedes')?>">Lista Sedes</a>

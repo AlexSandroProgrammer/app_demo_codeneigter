@@ -12,7 +12,7 @@ class User extends CI_Model
     }
     // * metodo para validar contraseña y correo para habilitar el inicio de sesion
     function validateUser($email, $password){
-        $query = $this->db->query("SELECT * FROM users WHERE email = '$email' AND password = '$password' AND id_type_user = 1 AND id_state = 1'");
+        $query = $this->db->query("SELECT * FROM users WHERE email = '$email' AND password = '$password' AND id_type_user = 1 AND id_state = 1");
         if($query->num_rows() == 1){
             return $query->row();
         }else{
