@@ -53,7 +53,7 @@ Swal.fire({
                                 <tr>
                                     <td class="text-center">
                                         <div class="d-flex justify-content-center">
-                                            <a href="<?php echo base_url('sedes/edit/'.$sede->id_sede); ?>"
+                                            <a href="<?php echo base_url('sedes/view_editar/'.$sede->id_sede); ?>"
                                                 class="btn btn-primary mx-1">
                                                 <i class="fa fa-edit"></i> Editar
                                             </a>

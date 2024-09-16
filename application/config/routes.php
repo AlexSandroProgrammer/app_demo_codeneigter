@@ -66,3 +66,4 @@ $route['registrar_medico'] = 'medicos/register';
 $route['form_registrar_medico'] = 'medicos/view_registrar';
 $route['medicos/editar/(:num)'] = 'medicos/view_editar/$1';
 $route['medicos/delete/(:num)'] = 'medicos/eliminar/$1';
+$route['sedes/delete/(:num)'] = 'sedes/eliminar/$1';
