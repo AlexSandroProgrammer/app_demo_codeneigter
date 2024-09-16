@@ -33,6 +33,9 @@
                                         placeholder="Ingresar telefono de la sede">
                                 </div>
                                 <button type="submit" class="btn btn-primary">Registrar</button>
+                                <a href="<?= base_url('sedes');?>" class="btn btn-danger">
+                                    Regresar
+                                </a>
 
                                 <?php
                                     if ($this->session->flashdata('error')) {                        
