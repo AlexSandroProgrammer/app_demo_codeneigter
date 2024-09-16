@@ -19,12 +19,13 @@
                             <form method="post" action="<?= base_url('medicos/register') ?>">
                                 <div class="form-group">
                                     <label>Documento</label>
-                                    <input type="number" class="form-control" autofocus name="documento"
+                                    <input type="number" class="form-control" required autofocus name="documento"
+                                        minlength="6" maxlength="10"
                                         placeholder="Ingresar numero de documento del medico">
                                 </div>
                                 <div class="form-group">
                                     <label>Nombres</label>
-                                    <input type="text" class="form-control" name="names"
+                                    <input type="text" class="form-control" name="names" required
                                         placeholder="Ingresar nombre del medico">
                                 </div>
                                 <div class="form-group">

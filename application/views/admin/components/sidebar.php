@@ -35,6 +35,8 @@
     <script src="https://code.highcharts.com/modules/export-data.js"></script>
     <!-- Variable Pie Module -->
     <script src="https://code.highcharts.com/modules/variable-pie.js"></script>
+    <link rel="shortcut icon" href="<?= base_url("assets/static/images/favicon/favicon.png") ?>" type="image/x-icon">
+
 </head>
 
 <body>

@@ -24,6 +24,7 @@ class Admin extends CI_Controller
         }
         // realizamos un conteo de medicos para conocer la cantidad de medicos por sede
         $datosSedes = $this->Sedes_model->obtenerCantidadMedicosPorSede();
+        $data['datosMedicosDivEstYSede'] = $this->Medicos_model->contarMedicosPorSedeYEstado();
         // Convertir los datos al formato necesario para el gráfico de Variable Radius Pie
         $datos_grafico = [];
         foreach ($datosSedes as $row) {

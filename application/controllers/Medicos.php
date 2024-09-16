@@ -1,6 +1,5 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
-
 class Medicos extends CI_Controller {
     public function __construct()
     {
@@ -96,7 +95,7 @@ class Medicos extends CI_Controller {
                 );
                 $register_medico = $this->Medicos_model->registrarMedico($data);
                 if ($register_medico) {
-                    $this->session->set_flashdata('success', 'Sede registrada exitosamente.');
+                    $this->session->set_flashdata('success', 'Medico registrado exitosamente.');
                     redirect(base_url('medicos'));
                 } else {
                     $this->session->set_flashdata('error', 'Ha ocurrido un error al registrar el medico.');

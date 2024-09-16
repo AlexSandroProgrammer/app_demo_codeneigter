@@ -33,6 +33,8 @@ document.addEventListener('DOMContentLoaded', function() {
     // Obtener datos desde PHP
     const datosChart = <?php echo $datos_chart; ?>;
     const datosArea = <?php echo $datos_grafico_area; ?>;
+    const datosMedicos = <?php echo json_encode($datosMedicosDivEstYSede); ?>;
+    console.log(datosMedicos);
     // Crear el gráfico
     Highcharts.chart('container_chart', {
         chart: {
@@ -74,6 +76,54 @@ document.addEventListener('DOMContentLoaded', function() {
             zMin: 0,
             data: datosArea
         }]
+    });
+
+    // Organizar datos para Highcharts
+    const seriesData = {};
+    datosMedicos.forEach(fila => {
+        const sede = fila.nombre_sede;
+        const estado = fila.estado;
+        const cantidad = parseInt(fila.cantidad_medicos);
+
+        if (!seriesData[estado]) {
+            seriesData[estado] = [];
+        }
+
+        seriesData[estado].push({
+            name: sede,
+            y: cantidad
+        });
+    });
+
+    // Convertir seriesData en formato para Highcharts
+    const series = [];
+    for (let estado in seriesData) {
+        series.push({
+            name: estado,
+            data: seriesData[estado]
+        });
+    }
+
+    // Crear el gráfico de barras
+    Highcharts.chart('container_basic_bar', {
+        chart: {
+            type: 'bar'
+        },
+        title: {
+            text: 'Cantidad de Médicos por Sede y Estado'
+        },
+        xAxis: {
+            type: 'category',
+            title: {
+                text: 'Sedes'
+            }
+        },
+        yAxis: {
+            title: {
+                text: 'Cantidad de Médicos'
+            }
+        },
+        series: series
     });
 });
 </script>

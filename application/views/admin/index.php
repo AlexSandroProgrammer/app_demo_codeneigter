@@ -116,7 +116,7 @@ $datos_chart = json_encode($datos_y);
         </div>
     </div>
     <div class="row mb-4">
-        <div class="col-xl-6 col-md-12 mb-4">
+        <div class="col-xl-6 col-md-12 mb-4" style="margin-top: 20px;">
             <div class="card">
                 <div class="card-header">
                     <h4 class="card-title">Estadisticas Registros Por Tablas</h4>
@@ -126,13 +126,23 @@ $datos_chart = json_encode($datos_y);
                 </div>
             </div>
         </div>
-        <div class="col-xl-6 col-md-12 mb-4">
+        <div class="col-xl-6 col-md-12 mb-4" style="margin-top: 20px;">
             <div class="card">
                 <div class="card-header">
                     <h4 class="card-title">Estadisticas Cantidad de Medicos Por Sede</h4>
                 </div>
                 <div class="card-body">
                     <div id="container_radius_pie" style="width: 100%; height: 400px;"></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-6 col-md-12 mb-4" style="margin-top: 20px;">
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="card-title">Estadisticas Cantidad de Medicos Por Sede y Estado</h4>
+                </div>
+                <div class="card-body">
+                    <div id="container_basic_bar" style="width: 100%; height: 400px;"></div>
                 </div>
             </div>
         </div>
