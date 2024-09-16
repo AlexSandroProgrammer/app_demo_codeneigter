@@ -67,7 +67,7 @@
                                     </select>
                                 </div>
                                 <button type="submit" class="btn btn-primary">Registrar</button>
-                                <a href="<?= base_url('sedes');?>" class="btn btn-danger">
+                                <a href="<?= base_url('medicos');?>" class="btn btn-danger">
                                     Regresar
                                 </a>
                                 <?php

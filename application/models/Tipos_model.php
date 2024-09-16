@@ -26,4 +26,14 @@ class Tipos_model extends CI_Model
         $query = $this->db->get('tipos');
         return $query->result();
     }
+
+    //* metodo para hacer un conteo de tipos de usuario
+    public function contarTipos(){
+        $query = $this->db->query("SELECT COUNT(*) as totalTipos FROM tipos");
+        if($query->num_rows() == 1){
+            return $query->row()->totalTipos;
+        }else{
+            return 0;
+        }
+    }
 }

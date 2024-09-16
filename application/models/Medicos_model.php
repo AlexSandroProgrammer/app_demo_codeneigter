@@ -34,9 +34,9 @@ class Medicos_model extends CI_Model
 
     //* metodo para hacer un conteo de medicos
     public function contarMedicos(){
-        $query = $this->db->query("SELECT COUNT(*) as total FROM users WHERE id_type_user = 2");
+        $query = $this->db->query("SELECT COUNT(*) as totalMedicos FROM users WHERE id_type_user = 2");
         if($query->num_rows() == 1){
-            return $query->row()->total;
+            return $query->row()->totalMedicos;
         }else{
             return 0;
         }

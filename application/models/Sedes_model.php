@@ -28,4 +28,14 @@ class Sedes_model extends CI_Model
         $query = $this->db->get('sedes');
         return $query->result();
     }
+
+    //* metodo para hacer un conteo de sedes
+    public function contarSedes(){
+        $query = $this->db->query("SELECT COUNT(*) as totalSedes FROM sedes");
+        if($query->num_rows() == 1){
+            return $query->row()->totalSedes;
+        }else{
+            return 0;
+        }
+    }
 }

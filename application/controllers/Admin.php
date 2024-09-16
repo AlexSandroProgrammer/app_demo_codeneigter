@@ -15,6 +15,22 @@ class Admin extends CI_Controller
     }
 	//  metodo para mostrar pagina inicial
 	public function index(){
-		$this->load->view('admin/index');
+        // validar sesión
+        $session_data = $this->session->userdata('UserLoginSession');
+        if (!isset($session_data['documento'])) {
+            $this->session->sess_destroy();
+            redirect(base_url('welcome'));
+            return;
+        }
+        // contar médicos registrados en la base de datos
+        $data['medicos'] = $this->Medicos_model->contarMedicos();
+        // contar sedes registradas en la base de datos
+        $data['sedes'] = $this->Sedes_model->contarSedes();
+        // contar estados registrados en la base de datos
+        $data['estados'] = $this->Estados_model->contarEstados();
+        // contar tipos de usuarios registrados en la base de datos
+        $data['tipos'] = $this->Tipos_model->contarTipos();
+        // cargar la vista con la lista de médicos, sedes, estados y tipos de usuarios    
+		$this->load->view('admin/index', $data);
 	}
 }
