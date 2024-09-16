@@ -60,3 +60,4 @@ $route['sedes'] = 'sedes/index';
 $route['form_registrar_sede'] = 'sedes/view_registrar';
 $route['registrar_sede'] = 'sedes/register';
 $route['registrar_estado'] = 'estados/register';
+$route['tipos'] = 'tipos/index';
