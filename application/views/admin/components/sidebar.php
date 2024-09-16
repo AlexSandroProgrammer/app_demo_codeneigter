@@ -73,24 +73,23 @@
                 <div class="sidebar-nav navbar-collapse">
                     <ul class="nav" id="side-menu">
                         <li>
-                            <a href="<?= base_url('admin')?>"><i class="fa fa-dashboard fa-fw"></i>Estadisticas</a>
+                            <a href="<?= base_url('admin')?>"><i class="fa fa-dashboard fa-fw"></i> Estadisticas</a>
                         </li>
                         <li>
                             <a href="#"><i class="fa fa-building"></i>
                                 Sedes<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="<?= base_url('form_registrar_sede')?>">Registrar Sede</a>
+                                    <a href="<?= base_url('form_registrar_sede')?>"> Registrar Sede</a>
                                 </li>
                                 <li>
-                                    <a href="<?= base_url('sedes')?>">Lista Sedes</a>
+                                    <a href="<?= base_url('sedes')?>"> Lista Sedes</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-cogs"></i>
-                                Estados<span class="fa arrow"></span></a>
+                            <a href="#"><i class="fa fa-cogs"></i> Estados<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
                                     <a href="<?= base_url('estados')?>">Lista Estados</a>
@@ -99,22 +98,21 @@
                             <!-- /.nav-second-level -->
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-user"></i>
-                                Tipos de Usuario<span class="fa arrow"></span></a>
+                            <a href="#"><i class="fa fa-user"></i> Tipos de Usuario<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="<?= base_url('tipos')?>">Lista Tipos de Usuario</a>
+                                    <a href="<?= base_url('tipos')?>"> Lista Tipos de Usuario</a>
                                 </li>
                             </ul>
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-user"></i>Medicos<span class="fa arrow"></span></a>
+                            <a href="#"><i class="fa fa-user"></i> Medicos<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="<?= base_url('medicos')?>">Lista de Medicos</a>
+                                    <a href="<?= base_url('medicos')?>"> Lista de Medicos</a>
                                 </li>
                                 <li>
-                                    <a href="<?= base_url('form_registrar_medico')?>">Registrar Medico</a>
+                                    <a href="<?= base_url('form_registrar_medico')?>"> Registrar Medico</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->

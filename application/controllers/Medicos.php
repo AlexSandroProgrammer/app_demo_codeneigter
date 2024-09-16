@@ -190,18 +190,52 @@ class Medicos extends CI_Controller {
                 if ($register_medico) {
                     $this->session->set_flashdata('success', 'Los datos se han actualizado correctamente.');
                     redirect(base_url('medicos'));
+                    return;
                 } else {
                     $this->session->set_flashdata('error', 'Ha ocurrido un error al momento de editar el medico.');
                     redirect(base_url('medicos'));
+                    return;
                 }
             } else {
                 $this->session->set_flashdata('error', 'Error al momento de actualizar los datos del medico.');
                 redirect(base_url('medicos') );
+                return;
             }
         } else {
             $this->session->set_flashdata('error', 'Ha ocurrido un error al momento actualizar los datos el medico.');
             redirect(base_url('medicos'));
+            return;
         }
     }
-    
+
+    //* metodo para eliminar los datos del medico
+    public function eliminar($documento){
+        // validar sesión
+        $session_data = $this->session->userdata('UserLoginSession');
+        if (!isset($session_data['documento'])) {
+            $this->session->sess_destroy();
+            redirect(base_url('welcome'));
+            return;
+        }
+        // llamo el medico por documento
+        $medico_eliminar = $this->Medicos_model->obtenerMedicoPorDocumento($documento);
+        // validamos que si no trae medico entonces enviamos un mensaje de que no hay medico registrado
+        if (empty($medico_eliminar)) {
+            $this->session->set_flashdata('error', 'No se ha encontrado el medico con el documento: '. $documento);
+            redirect(base_url('medicos'));
+            return;
+        }
+        // eliminamos el medico
+        $borrar_medico = $this->Medicos_model->eliminarMedico($documento);
+        if ($borrar_medico){
+            $this->session->set_flashdata('success', 'El medico ha sido eliminado correctamente.');
+            redirect(base_url('medicos'));
+            return;
+        }
+        else{
+            $this->session->set_flashdata('error', 'Ha ocurrido un error al momento de eliminar el medico.');
+            redirect(base_url('medicos'));
+            return;
+        }
+    }
 }

@@ -51,7 +51,6 @@ Swal.fire({
                 <div class="panel-heading">
                     Listado de Medicos
                 </div>
-
                 <!-- /.panel-heading -->
                 <div class="panel-body">
                     <div class="dataTable_wrapper mt-2">
