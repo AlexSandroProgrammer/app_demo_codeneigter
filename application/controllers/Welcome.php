@@ -38,7 +38,7 @@ class Welcome extends CI_Controller
 			$this->form_validation->set_rules('names', 'Names', 'required');
 			$this->form_validation->set_rules('password', 'Password', 'required');
 			$this->form_validation->set_rules('surnames', 'Surnames', 'required');
-			$this->form_validation->set_rules('id', 'Id', 'required');
+			$this->form_validation->set_rules('documento', 'Documento', 'required');
 			$this->form_validation->set_rules('id_type_user', 'Id_Type_User', 'required');
 			$this->form_validation->set_rules('id_state', 'Id_State', 'required');
 			if ($this->form_validation->run() == TRUE) {
@@ -47,7 +47,7 @@ class Welcome extends CI_Controller
 				$names = $this->input->post('names');
 				$surnames = $this->input->post('surnames');
 				$password = $this->input->post('password');
-				$id = $this->input->post('id');
+				$documento = $this->input->post('documento');
 				$id_type_user = $this->input->post('id_type_user');
 				$id_state = $this->input->post('id_state');
 				// Procesar los datos y guardarlos en la base de datos
@@ -56,7 +56,7 @@ class Welcome extends CI_Controller
 					'names' => $names,
 					'password' => $password,
 					'surnames' => $surnames,
-					'id' => $id,
+					'documento' => $documento,
 					'id_type_user' => $id_type_user,
 					'id_state' => $id_state,
 				);
@@ -90,11 +90,11 @@ class Welcome extends CI_Controller
 				// validamos si todo funciono correctamente
 				if($validate != false){
 					// guardamos los datos de la sesion
-					$id = $validate->id;
+					$documento = $validate->documento;
 					$email = $validate->email;
 					// guardamos del usuario en un arreglo
 					$session_data = array(
-						'id' => $id,
+						'documento' => $documento,
                         'email' => $email
 					);
 					$this->session->set_userdata('UserLoginSession',$session_data);

@@ -19,40 +19,39 @@
                             <form method="post" action="<?= base_url('sedes/register') ?>">
                                 <div class="form-group">
                                     <label>Nombre de Sede</label>
-                                    <input class="form-control" autofocus name="nombre_sede"
-                                        placeholder="Ingresar nombre de la sede">
+                                    <input type="text" class="form-control" minlength="3" maxlength="60" min="3"
+                                        max="60" autofocus name="nombre_sede" placeholder="Ingresar nombre de la sede">
                                 </div>
                                 <div class="form-group">
                                     <label>Direccion</label>
-                                    <input class="form-control" name="direccion"
-                                        placeholder="Ingresar direccion de la sede">
+                                    <input type="text" class="form-control" minlegth="3" maxlength="200"
+                                        name="direccion" placeholder="Ingresar direccion de la sede">
                                 </div>
                                 <div class="form-group">
                                     <label>Telefono</label>
-                                    <input class="form-control" name="telefono"
-                                        placeholder="Ingresar telefono de la sede">
+                                    <input type="number" minlegth="10" maxlength="10" class="form-control"
+                                        name="telefono" placeholder="Ingresar telefono de la sede">
                                 </div>
                                 <button type="submit" class="btn btn-primary">Registrar</button>
-                                <a href="<?= base_url('sedes');?>" class="btn btn-danger">
+                                <a href="<?= base_url('sedes'); ?>" class="btn btn-danger">
                                     Regresar
                                 </a>
-
                                 <?php
-                                    if ($this->session->flashdata('error')) {                        
-                                    ?>
+                                if ($this->session->flashdata('error')) {
+                                ?>
                                 <script>
                                 Swal.fire({
                                     title: 'Error!',
-                                    text: '<?= $this->session->flashdata('error')?>',
+                                    text: '<?= $this->session->flashdata('error') ?>',
                                     icon: 'error',
                                     confirmButtonText: 'Aceptar'
                                 });
                                 </script>
 
                                 <?php
-                                
-                                    }
-                                    ?>
+
+                                }
+                                ?>
                             </form>
                         </div>
                         <!-- /.col-lg-6 (nested) -->

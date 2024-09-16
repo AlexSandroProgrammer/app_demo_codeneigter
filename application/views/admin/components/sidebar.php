@@ -90,13 +90,23 @@
                             </ul>
                             <!-- /.nav-second-level -->
                         </li>
-
                         <li>
                             <a href="#"><i class="fa fa-user"></i>
                                 Tipos de Usuario<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
                                     <a href="<?= base_url('tipos')?>">Lista Tipos de Usuario</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-user"></i>Medicos<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="<?= base_url('medicos')?>">Lista de Medicos</a>
+                                </li>
+                                <li>
+                                    <a href="<?= base_url('form_registrar_medico')?>">Registrar Medico</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->

@@ -61,3 +61,6 @@ $route['form_registrar_sede'] = 'sedes/view_registrar';
 $route['registrar_sede'] = 'sedes/register';
 $route['registrar_estado'] = 'estados/register';
 $route['tipos'] = 'tipos/index';
+$route['medicos'] = 'medicos/index';
+$route['registrar_medico'] = 'medicos/register';
+$route['form_registrar_medico'] = 'medicos/view_registrar';

@@ -13,7 +13,7 @@ class Sedes extends CI_Controller {
     {
         // validar sesión
         $session_data = $this->session->userdata('UserLoginSession');
-        if (!isset($session_data['id'])) {
+        if (!isset($session_data['documento'])) {
             $this->session->sess_destroy();
             redirect(base_url('welcome'));
             return;
@@ -30,7 +30,7 @@ class Sedes extends CI_Controller {
     {
         // validar sesión
         $session_data = $this->session->userdata('UserLoginSession');
-        if (!isset($session_data['id'])) {
+        if (!isset($session_data['documento'])) {
             $this->session->sess_destroy();
             redirect(base_url('welcome'));
             return;
@@ -42,7 +42,7 @@ class Sedes extends CI_Controller {
     {
 		// validar sesión
         $session_data = $this->session->userdata('UserLoginSession');
-        if (!isset($session_data['id'])) {
+        if (!isset($session_data['documento'])) {
             $this->session->sess_destroy();
             redirect(base_url('welcome'));
             return;
