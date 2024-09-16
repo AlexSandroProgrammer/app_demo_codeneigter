@@ -64,3 +64,4 @@ $route['tipos'] = 'tipos/index';
 $route['medicos'] = 'medicos/index';
 $route['registrar_medico'] = 'medicos/register';
 $route['form_registrar_medico'] = 'medicos/view_registrar';
+$route['medicos/editar/(:num)'] = 'medicos/view_editar/$1';

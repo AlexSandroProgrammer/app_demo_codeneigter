@@ -15,7 +15,6 @@ Swal.fire({
 <?php                            
 }
 ?>
-
 <?php
 if ($this->session->flashdata('error')) {                        
 ?>
@@ -59,6 +58,7 @@ Swal.fire({
                         <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                             <thead>
                                 <tr>
+                                    <th>Acciones</th>
                                     <th>Documento</th>
                                     <th>Nombres</th>
                                     <th>Apellidos</th>
@@ -73,6 +73,19 @@ Swal.fire({
                                 <?php foreach ($medicos as $medico): ?>
                                 <?php if ($medico !== null): // Comprobar que $medico no sea null ?>
                                 <tr>
+                                    <td class="text-center">
+                                        <div class="d-flex justify-content-center">
+                                            <a href="<?php echo base_url('medicos/view_editar/'.$medico->documento); ?>"
+                                                class="btn btn-primary mx-1 my-2" style="margin-bottom: 5px;">
+                                                <i class="fa fa-edit"></i> Editar
+                                            </a>
+                                            <a href="<?php echo base_url('medicos/delete/'.$medico->documento); ?>"
+                                                class="btn btn-danger mx-1"
+                                                onclick="return confirm('¿Estás seguro de que deseas eliminar este medico?');">
+                                                <i class="fa fa-trash"></i> Eliminar
+                                            </a>
+                                        </div>
+                                    </td>
                                     <td><?= isset($medico->documento) ? $medico->documento : 'N/A'; ?></td>
                                     <td><?= isset($medico->names) ? $medico->names : 'N/A'; ?></td>
                                     <td><?= isset($medico->surnames) ? $medico->surnames : 'N/A'; ?></td>

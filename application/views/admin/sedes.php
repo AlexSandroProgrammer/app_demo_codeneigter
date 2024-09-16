@@ -51,20 +51,24 @@ Swal.fire({
                                 <?php if (!empty($sedes)): ?>
                                 <?php foreach ($sedes as $sede): ?>
                                 <tr>
-                                    <td>
-                                        <a href="<?php echo base_url('sedes/edit/'.$sede->id_sede); ?>"
-                                            class="btn btn-primary"><i class="fa fa-edit"></i>
-                                            Editar</a>
-                                        <a href="<?php echo base_url('sedes/delete/'.$sede->id_sede); ?>"
-                                            class="btn btn-danger"
-                                            onclick="return confirm('¿Estás seguro de que deseas eliminar esta sede?');">
-                                            <i class="fa fa-trash"></i>
-                                            Eliminar</a>
+                                    <td class="text-center">
+                                        <div class="d-flex justify-content-center">
+                                            <a href="<?php echo base_url('sedes/edit/'.$sede->id_sede); ?>"
+                                                class="btn btn-primary mx-1">
+                                                <i class="fa fa-edit"></i> Editar
+                                            </a>
+                                            <a href="<?php echo base_url('sedes/delete/'.$sede->id_sede); ?>"
+                                                class="btn btn-danger mx-1"
+                                                onclick="return confirm('¿Estás seguro de que deseas eliminar esta sede?');">
+                                                <i class="fa fa-trash"></i> Eliminar
+                                            </a>
+                                        </div>
                                     </td>
                                     <td><?php echo $sede->nombre_sede; ?></td>
                                     <td><?php echo $sede->direccion; ?></td>
                                     <td><?php echo $sede->telefono; ?></td>
                                 </tr>
+
                                 <?php endforeach; ?>
                                 <?php else: ?>
                                 <tr class="text-center">

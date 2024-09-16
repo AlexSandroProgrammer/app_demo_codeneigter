@@ -51,4 +51,45 @@ class Medicos_model extends CI_Model
             return [];
         }
     }
+
+    // * método para obtener medico por documento
+    public function obtenerMedicoPorDocumento($documento){
+        $query = $this->db->query("SELECT * FROM users INNER JOIN estados ON users.id_state = estados.id_estado INNER JOIN tipos ON users.id_type_user = tipos.id INNER JOIN sedes ON users.id_sede = sedes.id_sede WHERE users.documento = '$documento' AND users.id_type_user = 2");
+        if($query->num_rows() >= 1){
+            return $query->row();
+        }else{
+            return null;
+        }
+    }
+    
+    // * método para actualizar medico
+    public function actualizarMedico($documento, $data) {
+        $email = $data['email'];
+        // Usar consultas preparadas para evitar inyecciones SQL
+        $sql = "SELECT * FROM users WHERE email = ? AND documento <> ?";
+        $query = $this->db->query($sql, array($email, $documento));
+        if ($query->num_rows() == 0) {
+            $this->db->where('documento', $documento);
+            $this->db->update('users', $data);
+            if ($this->db->affected_rows() > 0) {
+                return true; // La actualización fue exitosa
+            } else {
+                return false; // La actualización falló
+            }
+        } else {
+            return false; // El email ya se encuentra registrado en el sistema
+        }
+    }
+    
+    
+    // * método para eliminar medico
+    public function eliminarMedico($documento){
+        $this->db->where('documento', $documento);
+        $this->db->delete('users');
+        if ($this->db->affected_rows() > 0) {
+            return true; // La eliminación fue exitosa
+        } else {
+            return false; // La eliminación falló
+        }
+    }
 }
