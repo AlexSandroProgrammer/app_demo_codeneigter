@@ -69,16 +69,16 @@ class Medicos extends CI_Controller {
         }
 		// validamos que el formulario sea enviado por el emtodo POST
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-            $this->form_validation->set_rules('id', 'Id', 'required');
+            $this->form_validation->set_rules('documento', 'Documento', 'required|is_unique[users.documento]');
             $this->form_validation->set_rules('names', 'Names', 'required');
             $this->form_validation->set_rules('surnames', 'Surnames', 'required');
-            $this->form_validation->set_rules('email', 'Email', 'required');
+            $this->form_validation->set_rules('email', 'Email', 'required|valid_email|is_unique[users.email]');
             $this->form_validation->set_rules('id_sede', 'Id Sede', 'required');
             $this->form_validation->set_rules('id_type_user', 'Id Type User', 'required');
             $this->form_validation->set_rules('id_state', 'Id State', 'required');
             if ($this->form_validation->run() == TRUE) {
                 // Obtener los valores de los campos del formulario
-                $id = $this->input->post('id');
+                $documento = $this->input->post('documento');
                 $names = $this->input->post('names');
                 $surnames = $this->input->post('surnames');
                 $email = $this->input->post('email');
@@ -86,7 +86,7 @@ class Medicos extends CI_Controller {
                 $id_type_user = $this->input->post('id_type_user');
                 $id_state = $this->input->post('id_state');
                 $data = array(
-                    'id' => $id,
+                    'documento' => $documento,
                     'names' => $names,
                    'surnames' => $surnames,
                     'email' => $email,
@@ -99,15 +99,15 @@ class Medicos extends CI_Controller {
                     $this->session->set_flashdata('success', 'Sede registrada exitosamente.');
                     redirect(base_url('medicos'));
                 } else {
-                    $this->session->set_flashdata('error', 'Ha ocurrido un error al registrar la sede.');
+                    $this->session->set_flashdata('error', 'Ha ocurrido un error al registrar el medico.');
                     redirect(base_url('form_registrar_medico'));
                 }
             } else {
-                $this->session->set_flashdata('error', 'Por favor, completa todos los campos obligatorios.');
+                $this->session->set_flashdata('error', 'Error al momento de registrar el formulario.');
                 redirect(base_url('form_registrar_medico'));
             }
         } else {
-            $this->session->set_flashdata('error', 'Ha ocurrido un error al registrar la sede.');
+            $this->session->set_flashdata('error', 'Ha ocurrido un error al registrar el medico.');
             redirect(base_url('form_registrar_medico'));
         }
     }

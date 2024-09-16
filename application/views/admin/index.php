@@ -1,4 +1,22 @@
 <?= require_once('components/sidebar.php') ?>
+<?php
+// recibimos los props requeridos de la vista
+$medicos = isset($medicos) ? (int)$medicos : 0;
+$estados = isset($estados) ? (int)$estados : 0;
+$sedes = isset($sedes) ? (int)$sedes : 0;
+$tipos = isset($tipos) ? (int)$tipos : 0;
+
+// Datos simulados desde PHP (pueden venir de una base de datos)
+$datos_y = [
+    ['name' => 'Medicos', 'y' => $medicos],
+    ['name' => 'Estados', 'y' => $estados],
+    ['name' => 'Sedes', 'y' => $sedes],
+    ['name' => 'Tipos', 'y' => $tipos]
+];
+
+// Convertir datos a JSON para pasarlos a JavaScript
+$datos_chart = json_encode($datos_y);
+?>
 <div id="page-wrapper">
     <div class="row">
         <div class="col-lg-12">
@@ -97,7 +115,30 @@
             </div>
         </div>
     </div>
-</div>
+    <div class="row mb-4">
+        <div class="col-xl-6 col-md-12 mb-4">
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="card-title">Estadisticas Registros Por Tablas</h4>
+                </div>
+                <div class="card-body">
+                    <div id="container_chart" style="width: 100%; height: 400px;"></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-6 col-md-12 mb-4">
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="card-title">Estadisticas Cantidad de Medicos Por Sede</h4>
+                </div>
+                <div class="card-body">
+                    <div id="container_radius_pie" style="width: 100%; height: 400px;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
 
+
+</div>
 
 <?= require_once('components/footer.php') ?>

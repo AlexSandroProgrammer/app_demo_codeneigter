@@ -29,11 +29,10 @@ class Estados_model extends CI_Model
         return $query->result();
     }
 
-
     //* metodo para hacer un conteo de estados
     public function contarEstados(){
         $query = $this->db->query("SELECT COUNT(*) as totalEstados FROM tipos");
-        if($query->num_rows() == 1){
+        if($query->num_rows() >= 1){
             return $query->row()->totalEstados;
         }else{
             return 0;

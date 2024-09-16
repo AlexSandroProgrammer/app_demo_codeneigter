@@ -28,6 +28,56 @@ $(document).ready(function() {
 });
 </script>
 
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Obtener datos desde PHP
+    const datosChart = <?php echo $datos_chart; ?>;
+    const datosArea = <?php echo $datos_grafico_area; ?>;
+    // Crear el gráfico
+    Highcharts.chart('container_chart', {
+        chart: {
+            type: 'column'
+        },
+        title: {
+            text: 'Gráfico de Modelos'
+        },
+        xAxis: {
+            type: 'category'
+        },
+        yAxis: {
+            title: {
+                text: 'Cantidad'
+            }
+        },
+        series: [{
+            name: 'Cantidad de Registros',
+            data: datosChart
+        }]
+    });
+
+    // Crear el gráfico de tipo variable radius pie
+    Highcharts.chart('container_radius_pie', {
+        chart: {
+            type: 'variablepie'
+        },
+        title: {
+            text: 'Estadisticas medicos por Sede'
+        },
+        tooltip: {
+            headerFormat: '<span style="font-size:10px">{point.key}</span><br>',
+            pointFormat: '<b>{point.name}</b>: {point.y} ({point.percentage:.1f}%)'
+        },
+        series: [{
+            name: 'Cantidad',
+            minPointSize: 10,
+            innerSize: '20%',
+            zMin: 0,
+            data: datosArea
+        }]
+    });
+});
+</script>
+
 </body>
 
 </html>

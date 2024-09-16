@@ -22,6 +22,18 @@ class Admin extends CI_Controller
             redirect(base_url('welcome'));
             return;
         }
+        // realizamos un conteo de medicos para conocer la cantidad de medicos por sede
+        $datosSedes = $this->Sedes_model->obtenerCantidadMedicosPorSede();
+        // Convertir los datos al formato necesario para el gráfico de Variable Radius Pie
+        $datos_grafico = [];
+        foreach ($datosSedes as $row) {
+            $datos_grafico[] = [
+                'name' => $row['nombre'],
+                'y' => (int) $row['cantidad'],
+                'z' => (int) $row['cantidad'] // El tamaño de los puntos en el gráfico
+            ];
+        }
+        $data['datos_grafico_area'] = json_encode($datos_grafico);
         // contar médicos registrados en la base de datos
         $data['medicos'] = $this->Medicos_model->contarMedicos();
         // contar sedes registradas en la base de datos

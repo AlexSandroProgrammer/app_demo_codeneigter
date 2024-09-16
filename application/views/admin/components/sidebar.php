@@ -29,6 +29,12 @@
         type="text/css">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
+    <!-- LIBRERIA HIGHCHARTS -->
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+    <script src="https://code.highcharts.com/modules/export-data.js"></script>
+    <!-- Variable Pie Module -->
+    <script src="https://code.highcharts.com/modules/variable-pie.js"></script>
 </head>
 
 <body>
@@ -65,7 +71,7 @@
                 <div class="sidebar-nav navbar-collapse">
                     <ul class="nav" id="side-menu">
                         <li>
-                            <a href="<?= base_url('admin')?>"><i class="fa fa-dashboard fa-fw"></i>Panel Principal</a>
+                            <a href="<?= base_url('admin')?>"><i class="fa fa-dashboard fa-fw"></i>Estadisticas</a>
                         </li>
                         <li>
                             <a href="#"><i class="fa fa-building"></i>

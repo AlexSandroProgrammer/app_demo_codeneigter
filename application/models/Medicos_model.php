@@ -24,8 +24,8 @@ class Medicos_model extends CI_Model
 
     // * método para obtener todas las medicos
     public function obtenerMedicos(){
-        $query = $this->db->query("SELECT * FROM users LEFT JOIN estados ON users.id_state = estados.id_estado LEFT JOIN tipos ON users.id_type_user = tipos.id LEFT JOIN sedes ON users.id_sede = sedes.id_sede WHERE users.id_type_user = 2");
-        if($query->num_rows() == 1){
+        $query = $this->db->query("SELECT * FROM users INNER JOIN estados ON users.id_state = estados.id_estado INNER JOIN tipos ON users.id_type_user = tipos.id INNER JOIN sedes ON users.id_sede = sedes.id_sede WHERE users.id_type_user = 2");
+        if($query->num_rows() >= 1){
             return $query->result();
         }else{
             return [];
