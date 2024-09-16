@@ -85,10 +85,10 @@ Swal.fire({
                                 </tr>
                             </thead>
                             <tbody>
-                                <?php if (!empty($tipos_usuarios)): ?>
-                                <?php foreach ($tipos_usuarios as $tipo_usuario): ?>
+                                <?php if (!empty($tipos)): ?>
+                                <?php foreach ($tipos as $tipo_usuario): ?>
                                 <tr>
-                                    <td><?php echo $tipo_usuario->id_tipo_usuario; ?></td>
+                                    <td><?php echo $tipo_usuario->id; ?></td>
                                     <td><?php echo $tipo_usuario->tipo_usuario; ?></td>
                                 </tr>
                                 <?php endforeach; ?>
