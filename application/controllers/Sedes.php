@@ -9,8 +9,7 @@ class Sedes extends CI_Controller {
         $this->load->model('Sedes_model'); // Cargar el modelo correctamente
     }
     //  método para mostrar página inicial
-    public function index()
-    {
+    public function index(){
         // validar sesión
         $session_data = $this->session->userdata('UserLoginSession');
         if (!isset($session_data['documento'])) {
@@ -26,8 +25,7 @@ class Sedes extends CI_Controller {
         $this->load->view('admin/sedes', $data);
     }
     //  método para mostrar formulario registro de sedes
-    public function view_registrar()
-    {
+    public function view_registrar(){
         // validar sesión
         $session_data = $this->session->userdata('UserLoginSession');
         if (!isset($session_data['documento'])) {
